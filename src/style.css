@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/josefin-sans';
+@import '@fontsource/amarante';
+
+/*
+  Brand tokens. Change a value here and it updates everywhere
+  (bg-crimson, text-crimson, bg-blush, text-ink ...).
+*/
+@theme {
+  --font-sans: 'Josefin Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Amarante', 'Josefin Sans Variable', serif;
+
+  --color-crimson: #9d0a36;
+  --color-crimson-dark: #7d0829;
+  --color-blush: #ffdee7;
+  --color-brush: #ffc3d3;
+  --color-ink: #1f1a1c;
+  --color-ink-soft: #5b4a50;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-crimson);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
